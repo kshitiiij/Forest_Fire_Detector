@@ -6,6 +6,9 @@ import LiveIcon from "../components/LiveIcon";
 import PieChart from "../components/PieChart";
 import {forests} from './data'
 import {predictClass} from '../api/apiModel'
+import {client} from './client'
+
+const TO_NUMBER = "+917905158108"
 
 export default function Forest(props:{id:number}) {
 
@@ -21,6 +24,27 @@ export default function Forest(props:{id:number}) {
     useEffect(()=>{
         setShow(true)
     },[])
+
+    const send_message = async ()=>{
+        const body = `There is a fire detected in ${forest.title}`
+        console.log("In")
+        const res = await client.messages.create({
+            from: process.env.REACT_APP_TWILIO_PHONE_NUMBER,
+            to: TO_NUMBER,
+            body:body ,
+        })
+        
+        console.log(res)
+        // const os = require("os-browserify")
+        // console.log(os.platform())
+    }
+
+    useEffect(()=>{
+        if(fire)
+        {
+            send_message()
+        }
+    },[fire])
 
     const handleChange = (e:any)=>{
         setUrl(e.target.value);
@@ -75,6 +99,14 @@ export default function Forest(props:{id:number}) {
             </div>
             <p className="px-3 py-2 float-right">{forest.body}</p>
 
+            
+            <div className="flex flex-col mt-5 p-4 justify-center items-center">
+                <LiveIcon />
+                
+                {renderResult()}
+                
+            </div>
+
             <div className="flex justify-between items-center p-4 w-full mt-4 rounded-lg shadow-lg bg-gray-100">
         
                 <div className="w-[60rem] h-[35rem]">
@@ -83,12 +115,6 @@ export default function Forest(props:{id:number}) {
                 <div className="w-[30rem] h-[35rem]">
                     <PieChart show={show} />
                 </div>
-            </div>
-            <div className="flex flex-col mt-5 p-4 justify-center items-center">
-                <LiveIcon />
-                
-                {renderResult()}
-                
             </div>
         </div>        
     );
