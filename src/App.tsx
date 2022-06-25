@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'tw-elements';
+import PieChart from './components/PieChart';
 import AppRouter from './routes/AppRouter';
 
 function App() {

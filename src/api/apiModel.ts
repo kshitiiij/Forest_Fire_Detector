@@ -8,7 +8,7 @@ type RequestBody = {
 const request = async (endpoint: string, method:RequestMethod = 'POST', data:any = {})=>{
 
     const response = await fetch(API_BASE_URL + endpoint, {
-        method: "POST",
+        method: method,
         headers: {
             "Content-Type": "application/json"
         },
