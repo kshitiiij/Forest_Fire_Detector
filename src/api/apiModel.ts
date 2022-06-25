@@ -1,8 +1,8 @@
-const API_BASE_URL = "localhost:8000/api/"
+const API_BASE_URL = "http://127.0.0.1:8000/api/"
 
 type RequestMethod = 'POST'
 type RequestBody = {
-    url: string
+    image: string
 }
 
 const request = async (endpoint: string, method:RequestMethod = 'POST', data:any = {})=>{
@@ -25,5 +25,5 @@ const request = async (endpoint: string, method:RequestMethod = 'POST', data:any
 } 
 
 export const predictClass = (data:RequestBody)=> {
-    return request('predict/', 'POST', data)
+    return request('predict', 'POST', data)
 }

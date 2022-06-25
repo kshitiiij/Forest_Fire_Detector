@@ -61,7 +61,7 @@ const data = (label:string)=>{
   datasets: [
     {
       label: label,
-      data: labels.map(() => generateRandom()),
+      data: [100, 200, 500, 50, 100, 200, 1000],
       borderColor: 'rgb(0, 205, 255)',
       backgroundColor: 'rgb(0, 0, 0)',
     },
