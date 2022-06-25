@@ -1,6 +1,8 @@
+import { Link } from "raviger";
 import React from "react";
 
-export default function Card(props:{title:string, location:string, body:string, update_time:number}) {
+
+export default function Card(props:{id:number, title:string, location:string, body:string, update_time:number}) {
 
     return (
         
@@ -17,7 +19,7 @@ export default function Card(props:{title:string, location:string, body:string, 
                 <p className="text-gray-700 text-base mb-4 text-center">
                     {props.body}
                 </p>
-                <button type="button" className=" inline-block px-6 py-2.5 bg-orange-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-700 hover:shadow-lg focus:bg-orange-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-800 active:shadow-lg transition duration-150 ease-in-out">Explore</button>
+                <Link href={`/forest/${props.id}`} className=" inline-block px-6 py-2.5 bg-orange-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-700 hover:shadow-lg focus:bg-orange-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-800 active:shadow-lg transition duration-150 ease-in-out">Explore</Link>
             </div>
             </div>
             <div className="flex justify-center py-3 px-6 border-t border-gray-300 text-gray-600">
