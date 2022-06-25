@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import environ
+import cloudinary
 
 env = environ.Env()
 
@@ -37,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    "fire_detect",
 ]
 
 MIDDLEWARE = [
@@ -113,3 +116,11 @@ STATICFILES_DIRS = [str(BASE_DIR / "static")]
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MODELS = str(BASE_DIR / "model")
+
+cloudinary.config(
+    cloud_name="dj4jmiua2",
+    api_key="448983219671985",
+    api_secret="Ja57qKfb7VDedm-QPpa7qsC9xCA",
+)
