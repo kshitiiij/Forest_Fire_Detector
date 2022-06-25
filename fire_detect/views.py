@@ -15,10 +15,10 @@ class UploadPredictView(APIView):
 
     @staticmethod
     def post(request):
-        file = request.data.get("image")
-        upload_data = cloudinary.uploader.upload(file)
+        img = request.data.get("image")
+        # upload_data = cloudinary.uploader.upload(file)
         # print(upload_data)
-        img = upload_data["url"]
+        # img = upload_data["url"]
         model = FireDetectConfig.model
 
         predicted_class = predict(img, model)
@@ -26,7 +26,6 @@ class UploadPredictView(APIView):
         return Response(
             {
                 "status": "success",
-                "data": upload_data,
                 "url": img,
                 "predicted_class": predicted_class,
             },

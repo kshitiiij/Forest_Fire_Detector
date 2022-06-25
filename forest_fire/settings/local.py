@@ -25,3 +25,6 @@ DATABASES = {
 ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
 # email backend to send emails
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
+]
