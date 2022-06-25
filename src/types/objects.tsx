@@ -4,5 +4,6 @@ export type forestFields = {
     title: string,
     location: string,
     body: string,
-    update_time: number
+    update_time: number,
+    coordinates: string
 }
