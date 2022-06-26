@@ -41,19 +41,19 @@ uncontrollable.
 >- We used react and tailwind UI to quickly build a basic frontend for our project.
 
 
-### ✨ Features
+###  Features
 > 1. Accuracy of Validation Data results: **loss: 0.3719 Accuracy: 0.9107**, Train Data results: **loss: 0.3506 Accuracy: 0.8943**.
 > 2. Prediction endpoint.
 > 3. Detects using Smoke which is the first sign of forest fire.
 > 4. Alert the concerned authorities after detection to take proper action.
 
-### 🧑‍💻 Tech Stack Used
+###  Tech Stack Used
 > 1. Front End: front end is made using **React(TypeScript)**  and **Tailwind** for designing components. 
 > 2. Back End: back end is REST based using **Django**.
 > 3. Model: Architecture used is *AlexNet*.
 
 
-### 🚀 Running Locally
+###  Running Locally
 > #### Setting up backend
 >- Step-1: Download the model from [here](https://drive.google.com/file/d/1OeKLmlx25cM0sTBrU1wxGDYcV4UINZHN/view?usp=sharing).
 >- Step-2: Extract model to "model" folder inside "forest_fire" directory(where setting folder is located)
@@ -65,7 +65,7 @@ uncontrollable.
 >- Step-2 Run `npm start`.
     npm i
 
-### 🤝 Contributing
+### Contributing
 > Contributions, issues and features requests are welcome!
 
 <h2 align='center'>
